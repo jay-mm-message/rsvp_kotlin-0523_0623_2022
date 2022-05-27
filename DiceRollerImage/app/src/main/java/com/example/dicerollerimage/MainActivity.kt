@@ -18,28 +18,42 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun diceRoll() {
-        val diceImage: ImageView = findViewById(R.id.imageView)
 
-        when (Dice(6).roll()) {
-            1 -> {
-                diceImage.setImageResource(R.drawable.dice_1)
-            }
-            2 -> {
-                diceImage.setImageResource(R.drawable.dice_2)
-            }
-            3 -> {
-                diceImage.setImageResource(R.drawable.dice_3)
-            }
-            4 -> {
-                diceImage.setImageResource(R.drawable.dice_4)
-            }
-            5 -> {
-                diceImage.setImageResource(R.drawable.dice_5)
-            }
-            6 -> {
-                diceImage.setImageResource(R.drawable.dice_6)
-            }
+        val drawableResource = when (Dice(6).roll()) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> {R.drawable.dice_1}
         }
+
+        val drawImage: ImageView = findViewById(R.id.imageView)
+        drawImage.setImageResource(drawableResource)
+
+//        val diceImage: ImageView = findViewById(R.id.imageView)
+//
+//        when (Dice(6).roll()) {
+//            1 -> {
+//                diceImage.setImageResource(R.drawable.dice_1)
+//            }
+//            2 -> {
+//                diceImage.setImageResource(R.drawable.dice_2)
+//            }
+//            3 -> {
+//                diceImage.setImageResource(R.drawable.dice_3)
+//            }
+//            4 -> {
+//                diceImage.setImageResource(R.drawable.dice_4)
+//            }
+//            5 -> {
+//                diceImage.setImageResource(R.drawable.dice_5)
+//            }
+//            6 -> {
+//                diceImage.setImageResource(R.drawable.dice_6)
+//            }
+//        }
     }
 }
 
